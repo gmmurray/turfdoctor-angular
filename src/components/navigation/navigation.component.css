@@ -1,0 +1,12 @@
+.logoImage:hover {
+    opacity: 0.9;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+li .light-green-text {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)
+}

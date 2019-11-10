@@ -1,0 +1,13 @@
+<div class="container">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-light bg-white shadow-none">
+        <mdb-navbar-brand><a class="navbar-brand" routerLink="/home"><div class="logoImage"><img src="/assets/img/logos/thumbnail_IMG_9409.jpg" height="90" alt="Turf Doctor Landscaping and Lawn"></div></a></mdb-navbar-brand>
+        <links>
+                <ul class="navbar-nav ml-auto">
+                    <li *ngFor="let option of options" class="nav-item">
+                        <a class="nav-link" routerLink="/{{option.toLowerCase()}}" routerLinkActive="light-green-text">{{option}}</a>
+                    </li>
+                </ul>
+                <button mdbBtn class="btn btn-primary btn-md ml-auto" href="#">Request Quote</button>
+        </links>
+    </mdb-navbar>
+</div>

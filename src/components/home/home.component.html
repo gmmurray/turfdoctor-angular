@@ -1,0 +1,99 @@
+<app-page-header 
+    [background]="background"
+    [homeButton]="jumbotronBtn"
+    [leadText]="jumbtronLeadText"
+    [subtitle]="jumbtronSubtitle"></app-page-header>
+<div class="container-fluid">
+    <div class="container">
+        <!-- Portfolio Cards Section -->
+        <div class="row">
+            <div class="card-group">
+                <div class="col my-4" *ngFor="let card of portfolioCards">
+                        <app-portfolio-card
+                            [backgroundImg]="card.backgroundImg"
+                            [title]="card.title"
+                            [description]="card.description">
+                    </app-portfolio-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- What we do Section -->
+        <div class="row">
+            <div class="col my-4">
+                <mdb-card>
+                    <mdb-card-body class="align-bottom">
+                        <mdb-card-title class="card-title h2-responsive">
+                            We do stuff outside
+                        </mdb-card-title>
+                        <mdb-card-text class="card-text">
+                            We are able to fulfill all of your residential landscaping and lawn needs. We do this by being:
+                            <ul>
+                                <li>Smart</li>
+                                <li>Fun</li>
+                                <li>Quick</li>
+                            </ul>
+                        </mdb-card-text>
+                        <div class="d-flex justify-content-center">
+                            <button routerLink="/services" class="btn btn-outline-primary">Our Services</button>
+                        </div>
+                    </mdb-card-body>
+                </mdb-card>
+            </div>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="row mb-4">
+            <div class="col my-4">
+                <div class="card">
+                    <h2 class="card-header">Get Started Now</h2>
+                    <div class="card-body">
+                        <form #emailForm="ngForm" (ngSubmit)="onSubmit(emailForm.value)">
+                                <input type="hidden" name="_honeypot" value="">
+                                <input type="hidden" name="_confirmation" value="">
+                            <div class="md-form row">
+                                <div class="col">
+                                    <input type="text" mdbInput class="form-control" placeholder="Name" id="name" required name="name" ngModel>
+                                </div>
+                                <div class="col">
+                                        {{model.name}}
+                                </div>
+                            </div>
+                            <div class="md-form row">
+                                <div class="col">
+                                    <input type="email" mdbInput class="form-control" placeholder="Email Address" id="email" required name="_replyto" ngModel>
+                                </div>
+                                <div class="col">
+                                        {{model._replyto}}
+                                </div>
+                            </div>
+                            <div class="md-form row">
+                                <div class="col">
+                                    <input type="tel" mdbInput class="form-control" placeholder="Phone Number" id="phone" required name="phone" ngModel>
+                                </div>
+                                <div class="col">
+                                        {{model.phone}}
+                                </div>
+                            </div>
+                            <div class="md-form row">
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Message" id="message" required name="message" ngModel>
+                                </div>
+                                <div class="col">
+                                        {{model.message}}
+                                </div>
+                            </div>
+                            <div class="md-form row">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center"><button type="submit" class="btn btn-secondary">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

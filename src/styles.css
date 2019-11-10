@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    scroll-behavior: smooth;
+}
+
+.paral {
+    height: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.paral p {
+    font-size: 24px;
+    color: #f5f5f5;
+    text-align: left;
+}
+
+.paral h1 {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 60px;
+    text-align: left;
+    padding-top: 200px;
+}
+
+.paral-index {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/banner_images/index_stock.jpeg);
+    height:400px;
+}
+
+.paral-services {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/banner_images/services_stock.jpg);
+    height:350px;
+    background-position:bottom;
+}
+
+.paral-portfolio {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/banner_images/portfolio_stock.jpg);
+    height: 350px;
+    background-position: bottom;
+}
+
+.paral-about {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/banner_images/about_stock.jpg);
+    height: 350px;
+    background-position: bottom;
+}
+
+.paral-contact {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(assets/img/banner_images/contact_stock.jpg);
+    height: 350px;
+    background-position: bottom;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .paral {
+        background-attachment: scroll;
+    }
+}
+
+body .btn-primary {
+    background-color: #063666 !important;
+}
+
+    .btn-primary:hover {
+        color: #75B851 !important;
+    }
+
+.btn-secondary {
+    background-color: #75B851 !important;
+}
+
+    .btn-secondary:hover {
+        color: #063666 !important;
+    }
+
+.border-secondary {
+    border-color: #75B851 !important;
+}
+
+.bg-secondary {
+    background-color: #75B851 !important;
+}
+
+.hidden {
+    display:none;
+}
