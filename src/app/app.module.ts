@@ -15,6 +15,7 @@ import { PageHeaderComponent } from '../components/page-header/page-header.compo
 import { PortfolioCardComponent } from 'src/components/home/portfolio-card/portfolio-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { EmailFormComponent } from 'src/components/email-form/email-form.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavigationComponent,
     PageHeaderComponent,
     PortfolioCardComponent,
+    EmailFormComponent
   ],
   imports: [
     BrowserModule,

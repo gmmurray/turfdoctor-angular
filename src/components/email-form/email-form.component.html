@@ -1,0 +1,39 @@
+<!-- <form ngNoForm action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="multipart/form-data">
+    <div class="md-form row">
+        <div class="col">
+            <input type="text" id="name" placeholder="Name" email name="name" 
+                mdbInut class="form-control" required minlength="4"
+                [(ngModel)]="emailModel.name" ngModel #name="ngModel">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">
+                    Name is required
+                </div>
+                <div *ngIf="name.errors.minlength">
+                    name must be at least 4 characters
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <input type="email" id="_replyto" placeholder="Email" name="_replyto">
+    <input type="text" id="message" placeholder="Message" name="message">
+    <input type="text" id="phone" placeholder="Phone" name="phone">
+    <input type="hidden" name="_subject" value="{{this.emailModel._subject}}">
+    <button type="submit">Upload</button>
+</form> -->
+
+<form novalidate [formGroup]="emailForm" action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="multipart/form-data">
+    <input type="text"
+        class="form-control"
+        formControlName="name"
+        required>
+    <input type="text"
+        class="form-control"
+        formControlName="_replyto"
+        required>
+    <input type="text"
+        class="form-control"
+        formControlName="message"
+        required>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Email } from 'src/app/EmailModel';
-import { HttpClient } from '@angular/common/http';
-import { NgForm, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -28,13 +25,7 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  model = new Email('', '', '', '', 'Turf Doctor Email Form', '', '');
-  submitted = false;
-  onSubmit(form: any): void{
-    this.http.post<any>('https://mailthis.to/gsoccerm@gmail.com', form);
-  }
-  //https://mailthis.to/gsoccerm@gmail.com
-  constructor(private titleService: Title, private http: HttpClient) {
+  constructor(private titleService: Title) {
     this.setTitle(this.title);
    }
   public setTitle(pageTitle){
@@ -42,5 +33,4 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit() {
   }
-
 }

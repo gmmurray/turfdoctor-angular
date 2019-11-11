@@ -48,7 +48,8 @@
                 <div class="card">
                     <h2 class="card-header">Get Started Now</h2>
                     <div class="card-body">
-                        <form #emailForm="ngForm" (ngSubmit)="onSubmit(emailForm.value)">
+                        <app-email-form></app-email-form>
+                        <!-- <form ngNoForm action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="multipart/form-data"">
                                 <input type="hidden" name="_honeypot" value="">
                                 <input type="hidden" name="_confirmation" value="">
                             <div class="md-form row">
@@ -90,7 +91,7 @@
                                 </div>
                             </div>
                             
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>
