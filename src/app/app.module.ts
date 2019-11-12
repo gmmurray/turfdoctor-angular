@@ -13,9 +13,10 @@ import { UrlSerializer } from '@angular/router';
 import { LowerCaseUrlSerializer } from './LowerCaseUrlSerializer';
 import { PageHeaderComponent } from '../components/page-header/page-header.component';
 import { PortfolioCardComponent } from 'src/components/home/portfolio-card/portfolio-card.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailFormComponent } from 'src/components/email-form/email-form.component';
+import { FooterComponent } from 'src/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,13 @@ import { EmailFormComponent } from 'src/components/email-form/email-form.compone
     NavigationComponent,
     PageHeaderComponent,
     PortfolioCardComponent,
-    EmailFormComponent
+    EmailFormComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot()
   ],

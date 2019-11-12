@@ -1,39 +1,68 @@
-<!-- <form ngNoForm action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="multipart/form-data">
-    <div class="md-form row">
+<form ngNoForm action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="application/x-www-form-urlencoded" class="{{formStyle}}">
+    <div class="row my-2">
         <div class="col">
-            <input type="text" id="name" placeholder="Name" email name="name" 
-                mdbInut class="form-control" required minlength="4"
-                [(ngModel)]="emailModel.name" ngModel #name="ngModel">
-            <div *ngIf="name.invalid && (name.dirty || name.touched)">
+            <input type="text" id="name" placeholder="Name*" name="name" 
+                class="form-control" required
+                [(ngModel)]="emailModel.name" #name="ngModel">
+            <div class="form-error" *ngIf="name.invalid && (name.dirty || name.touched)">
                 <div *ngIf="name.errors.required">
-                    Name is required
-                </div>
-                <div *ngIf="name.errors.minlength">
-                    name must be at least 4 characters
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter your name
                 </div>
             </div>
         </div>
     </div>
-    
-    <input type="email" id="_replyto" placeholder="Email" name="_replyto">
-    <input type="text" id="message" placeholder="Message" name="message">
-    <input type="text" id="phone" placeholder="Phone" name="phone">
-    <input type="hidden" name="_subject" value="{{this.emailModel._subject}}">
-    <button type="submit">Upload</button>
-</form> -->
 
-<form novalidate [formGroup]="emailForm" action="https://mailthis.to/gsoccerm@gmail.com" method="POST" encType="multipart/form-data">
-    <input type="text"
-        class="form-control"
-        formControlName="name"
-        required>
-    <input type="text"
-        class="form-control"
-        formControlName="_replyto"
-        required>
-    <input type="text"
-        class="form-control"
-        formControlName="message"
-        required>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="row my-2">
+        <div class="col">
+            <input type="email" id="_replyto" placeholder="Email Address*" name="_replyto"
+                class="form-control" required 
+                [(ngModel)]="emailModel._replyto" #_replyto="ngModel" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+            <div class="form-error" *ngIf="_replyto.invalid && (_replyto.dirty || _replyto.touched)">
+                <div *ngIf="_replyto.errors.required">
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter your email address
+                </div>
+                <div *ngIf="_replyto.errors.pattern">
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter a valid email address for example youremail@domain.com
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <div class="col">
+            <input type="tel" id="phone" placeholder="Phone" name="phone"
+                class="form-control" pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+                [(ngModel)]="emailModel.phone" #phone="ngModel">
+            <div class="form-error" *ngIf="phone.invalid && (phone.dirty || phone.touched)">
+                <div *ngIf="phone.errors.pattern">
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter a valid phone number with dashes, for example 000-000-0000
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row my-2">
+        <div class="col">
+            <textarea type="text" id="message" placeholder="Message*" name="message"
+                class="md-textarea form-control" required maxlength="255"
+                [(ngModel)]="emailModel.message" #message="ngModel"></textarea>
+            <div class="form-error" *ngIf="message.invalid && (message.dirty || message.touched)">
+                <div *ngIf="message.errors.required">
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter your message
+                </div>
+                <div *ngIf="message.errors.maxlength">
+                    <mdb-icon fas icon="exclamation-triangle"></mdb-icon> Please enter a shorter message
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" name="_subject" value="{{this.emailModel._subject}}">
+    <input type="hidden" name="_honeypot" value="{{this.emailModel._honeypot}}">
+    <input type="hidden" name="_after" value="{{this.emailModel._after}}">
+    <div class="row my-2">
+        <div class="col">
+            <div class="d-flex justify-content-center"><input type="submit" class="btn btn-light-green btn-lg"></div>
+        </div>
+    </div>
 </form>

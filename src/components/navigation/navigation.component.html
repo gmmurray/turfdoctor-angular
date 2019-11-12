@@ -7,7 +7,24 @@
                         <a class="nav-link" routerLink="/{{option.toLowerCase()}}" routerLinkActive="light-green-text">{{option}}</a>
                     </li>
                 </ul>
-                <button mdbBtn class="btn btn-primary btn-md ml-auto" href="#">Request Quote</button>
+                <button mdbBtn class="btn btn-light-green btn-md ml-auto" (click)="contactModal.show()">Request Quote</button>
         </links>
     </mdb-navbar>
+</div>
+
+<div mdbModal #contactModal="mdbModal" class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="contactModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center bg-primary text-white">
+                <h4 class="modal-title w-100 font-weight-bold h4-responsive">Send Turf Doctor a Message</h4>
+                <button type="button" class="close" (click)="contactModal.hide()" aria-label="Close">
+                    <span aria-hidden="true" class="text-white">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <app-email-form [formStyle]="none"></app-email-form>
+            </div>
+        </div>
+    </div>
 </div>

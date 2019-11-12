@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       backgroundImg: "assets/img/services/commercial/bulldozer_stock.jpg",
     }
   ];
-
+  
   constructor(private titleService: Title) {
     this.setTitle(this.title);
    }
