@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EmailFormComponent } from 'src/components/email-form/email-form.component';
 import { FooterComponent } from 'src/components/footer/footer.component';
+import { ServiceCardComponent } from 'src/components/services/service-card/service-card.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from 'src/components/footer/footer.component';
     PageHeaderComponent,
     PortfolioCardComponent,
     EmailFormComponent,
-    FooterComponent
+    FooterComponent,
+    ServiceCardComponent
   ],
   imports: [
     BrowserModule,

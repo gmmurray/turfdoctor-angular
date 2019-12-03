@@ -10,6 +10,7 @@ export class PageHeaderComponent implements OnInit {
   @Input() homeButton: boolean;
   @Input() leadText: string;
   @Input() subtitle: string;
+  @Input() title: string;
   constructor() { }
 
   ngOnInit() {

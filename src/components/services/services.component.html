@@ -1,1 +1,9 @@
-<app-page-header [background]="background"></app-page-header>
+<app-page-header [background]="background" [title]="title"></app-page-header>
+
+
+<div class="container" *ngFor="let card of serviceCards">
+    <mdb-card class="my-4" style="max-width:100%;">
+        <app-service-card [cardImg]="card.cardImg" [headText]="card.headText" [mainText]="card.mainText">
+        </app-service-card>
+    </mdb-card> 
+</div>
