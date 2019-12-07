@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmailFormComponent } from 'src/components/email-form/email-form.component';
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { ServiceCardComponent } from 'src/components/services/service-card/service-card.component';
+import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gallery-item.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ServiceCardComponent } from 'src/components/services/service-card/servi
     PortfolioCardComponent,
     EmailFormComponent,
     FooterComponent,
-    ServiceCardComponent
+    ServiceCardComponent,
+    GalleryItemComponent
   ],
   imports: [
     BrowserModule,
