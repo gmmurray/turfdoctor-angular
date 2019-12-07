@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gallery-item',
   templateUrl: './gallery-item.component.html',
   styleUrls: ['./gallery-item.component.css']
 })
-export class GalleryItemComponent implements OnInit {
+export class GalleryItemComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Input() imageUrl: string;
+  @Input() dimensionx: string;
+  @Input() dimensiony: string;
+  @Input() title: string;
+  @Input() description: string;
+  @Input() category: string;
 
 }
