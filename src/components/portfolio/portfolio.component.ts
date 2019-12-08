@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gallery-item.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,23 +14,27 @@ export class PortfolioComponent implements OnInit {
 
   galleryImages : GalleryItemComponent[];
   galleryImagesFilter : GalleryItemComponent[];
+  currentFilter: string = 'all';
+  currentPage: number = 1;
 
-  constructor(private titleService: Title) {
+  constructor(private titleService: Title, private route: ActivatedRoute) {
     this.setTitle(this.title);
-    this.setGalleryImages();
-    this.galleryImagesFilter = this.galleryImages;
+    
+    //this.galleryImagesFilter = this.galleryImages;
    }
   public setTitle(pageTitle){
     this.titleService.setTitle(pageTitle);
   }
   ngOnInit() {
+    this.setGalleryImages();
+    this.filter(this.route.snapshot.params.filter);
   }
 
   setGalleryImages() {
     this.galleryImages = [
       {
         imageUrl: 'assets/img/gallery/backyard1-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image One',
         description: 'Description One',
@@ -37,7 +42,7 @@ export class PortfolioComponent implements OnInit {
       },
       {
         imageUrl: 'assets/img/gallery/flowers-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image Two',
         description: 'Description Two',
@@ -45,7 +50,7 @@ export class PortfolioComponent implements OnInit {
       },
       {
         imageUrl: 'assets/img/gallery/heart-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image Three',
         description: 'Description Three',
@@ -53,7 +58,7 @@ export class PortfolioComponent implements OnInit {
       },
       {
         imageUrl: 'assets/img/gallery/hills-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image Two',
         description: 'Description Two',
@@ -61,7 +66,7 @@ export class PortfolioComponent implements OnInit {
       },
       {
         imageUrl: 'assets/img/gallery/house-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image Two',
         description: 'Description Two',
@@ -69,7 +74,7 @@ export class PortfolioComponent implements OnInit {
       },
       {
         imageUrl: 'assets/img/gallery/mountains-stock.jpeg',
-        dimensionx: '250',
+        dimensionx: '350',
         dimensiony: '250',
         title: 'Image Two',
         description: 'Description Two',
@@ -79,6 +84,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   filter(type){
+    if (type == null){
+      this.resetGallery();
+      return;
+    }
+    this.currentFilter = type;
     var items = [];
     this.galleryImages.forEach(element => {
       if (element.category == type){
@@ -86,9 +96,12 @@ export class PortfolioComponent implements OnInit {
       }
     });
     this.galleryImagesFilter = items;
+    this.currentPage = 1;
   }
 
   resetGallery() {
     this.galleryImagesFilter = this.galleryImages;
+    this.currentPage = 1;
+    this.currentFilter = 'all';
   }
 }

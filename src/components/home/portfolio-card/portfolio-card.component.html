@@ -5,7 +5,7 @@
         <mdb-card-text>
             {{description}}
         </mdb-card-text>
-        <div class="d-flex justify-content-center"><a asp-action="Portfolio" class="btn btn-indigo">View
+        <div class="d-flex justify-content-center"><a [routerLink]="['/portfolio', filter]" class="btn btn-indigo">View
                 Portfolio</a></div>
     </mdb-card-body>
 </mdb-card>

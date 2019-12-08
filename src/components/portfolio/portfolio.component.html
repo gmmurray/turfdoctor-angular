@@ -1,15 +1,27 @@
 <app-page-header [background]="background" [title]="title"></app-page-header>
-<div class="row">
-    <div class="col" *ngFor='let image of galleryImagesFilter'>
-    <app-gallery-item [imageUrl] = 'image.imageUrl' 
-        [dimensionx] = 'image.dimensionx' 
-        [dimensiony] = 'image.dimensiony'
-        [title] = 'image.title'
-        [description] = 'image.description'
-        [category] = 'image.category'></app-gallery-item>
+<div class="container">
+    <div class="row text-center mt-3">
+        <div class="col">
+            Filter by:
+            <div class="btn-group" role="group">
+                <button class="btn" [ngClass]="(currentFilter == 'all') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="resetGallery()">All</button>
+                <button class="btn" [ngClass]="(currentFilter == 'residential') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="filter('residential')">Residential</button>
+                <button class="btn" [ngClass]="(currentFilter == 'commercial') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="filter('commercial')">Commercial</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row text-center mt-3">
+        <div class="col-4"
+            *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 9, currentPage: currentPage }'>
+            <app-gallery-item [imageUrl]='image.imageUrl' [dimensionx]='image.dimensionx'
+                [dimensiony]='image.dimensiony' [title]='image.title' [description]='image.description'
+                [category]='image.category'></app-gallery-item>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <pagination-controls (pageChange)="currentPage = $event" class="pagination"></pagination-controls>
+        </div>
     </div>
 </div>
-
-<button class="btn btn-primary" (click)="filter('residential')">Residential</button>
-<button class="btn btn-primary" (click)="filter('commercial')">Commercial</button>
-<button class="btn btn-primary" (click)="resetGallery()">Reset</button>

@@ -9,6 +9,7 @@ export class PortfolioCardComponent {
   @Input() backgroundImg: string;
   @Input() title: string;
   @Input() description: string;
+  @Input() filter: string;
   constructor() { }
 
 

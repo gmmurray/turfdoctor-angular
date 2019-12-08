@@ -67,6 +67,10 @@ html {
     background-color: #063666 !important;
 }
 
+.btn.btn-outline-indigo {
+    border-color: #063666 !important;
+}
+
     .btn-indigo:hover {
         color: #75B851 !important;
     }

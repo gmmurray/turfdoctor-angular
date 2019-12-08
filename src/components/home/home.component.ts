@@ -16,12 +16,14 @@ export class HomeComponent implements OnInit {
     {
       title: "Residential", 
       description: "We are able to fulfill all of your residential landscaping and lawn needs", 
-      backgroundImg: "assets/img/services/residential/lawnmower_stock.jpg"
+      backgroundImg: "assets/img/services/residential/lawnmower_stock.jpg",
+      filter: "residential"
     },
     {
       title: "Commercial", 
       description: "We are able to fulfill all of your commercial landscaping and lawn needs", 
       backgroundImg: "assets/img/services/commercial/bulldozer_stock.jpg",
+      filter: "commercial"
     }
   ];
   

@@ -19,6 +19,7 @@ import { EmailFormComponent } from 'src/components/email-form/email-form.compone
 import { FooterComponent } from 'src/components/footer/footer.component';
 import { ServiceCardComponent } from 'src/components/services/service-card/service-card.component';
 import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gallery-item.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gall
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [
     {
