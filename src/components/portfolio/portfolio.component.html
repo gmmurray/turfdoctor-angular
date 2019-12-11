@@ -13,7 +13,7 @@
     </div>
     <div class="row text-center mt-3">
         <div class="col-4"
-            *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 9, currentPage: currentPage }'>
+            *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 3, currentPage: currentPage }'>
             <app-gallery-item [imageUrl]='image.imageUrl' [dimensionx]='image.dimensionx'
                 [dimensiony]='image.dimensiony' [title]='image.title' [description]='image.description'
                 [category]='image.category'></app-gallery-item>
