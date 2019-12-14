@@ -2,26 +2,23 @@
 <div class="container">
     <div class="row text-center mt-3">
         <div class="col">
-            Filter by:
-            <div class="btn-group" role="group">
-                <button class="btn" [ngClass]="(currentFilter == 'all') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="resetGallery()">All</button>
-                <button class="btn" [ngClass]="(currentFilter == 'residential') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="filter('residential')">Residential</button>
-                <button class="btn" [ngClass]="(currentFilter == 'commercial') ? 'btn-outline-indigo' : 'btn-indigo'" (click)="filter('commercial')">Commercial</button>
-
-            </div>
+            <span class="font-weight-bolder">Filter by:</span>
+            <a class="mx-2" [ngClass]="(currentFilter == 'all') ? 'font-weight-bold' : 'text-muted'" (click)="resetGallery()">All</a>
+            <a class="mx-2" [ngClass]="(currentFilter == 'residential') ? 'font-weight-bold' : 'text-muted'" (click)="filter('residential')">Residential</a>
+            <a class="mx-2" [ngClass]="(currentFilter == 'commercial') ? 'font-weight-bold' : 'text-muted'" (click)="filter('commercial')">Commercial</a>
         </div>
     </div>
-    <div class="row text-center mt-3">
-        <div class="col-4"
-            *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 3, currentPage: currentPage }'>
+    <div class="row text-center">
+        <div class="col-md-4 my-3"
+            *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 9, currentPage: currentPage }'>
             <app-gallery-item [imageUrl]='image.imageUrl' [dimensionx]='image.dimensionx'
                 [dimensiony]='image.dimensiony' [title]='image.title' [description]='image.description'
                 [category]='image.category'></app-gallery-item>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <pagination-controls (pageChange)="currentPage = $event" class="pagination"></pagination-controls>
-        </div>
+    <div class="text-center">
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
     </div>
+            
+
 </div>

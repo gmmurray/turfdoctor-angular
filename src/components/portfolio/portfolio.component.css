@@ -1,3 +1,7 @@
-.pagination /deep/ .ngx-pagination .current{
+pagination-controls /deep/ .ngx-pagination .current{
     background: #75B851;
+}
+
+pagination-controls /deep/ .ngx-pagination {
+    padding-left: 0;
 }

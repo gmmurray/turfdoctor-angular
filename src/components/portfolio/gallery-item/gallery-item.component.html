@@ -1,13 +1,20 @@
-<img src={{imageUrl}} width={{dimensionx}} height={{dimensiony}}>
-<ul>
-    <li>
-        {{title}}
-    </li>
-    <li>
-        {{description}}
-    </li>
-    <li>
-        {{category}}
-    </li>
-</ul>
-hi
+<a (click)="portfolioModal.show()">
+    <img src={{imageUrl}} style="width:350px;height:250px;object-fit:cover;max-width:100%">
+</a>
+
+<div mdbModal #portfolioModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content elegant-color-dark text-white">
+            <div class="modal-header">
+                <button type="button" class="close pull-right text-white" aria-label="Close" (click)="portfolioModal.hide()">
+                    <span aria-hidden="true">x</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModal">{{title}}</h4>
+            </div>
+            <div class="modal-body">
+                <img src={{imageUrl}} style="object-fit:cover;max-width:100%">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

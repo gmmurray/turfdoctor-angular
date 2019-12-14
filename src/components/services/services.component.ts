@@ -23,21 +23,18 @@ export class ServicesComponent implements OnInit {
     {
       cardImg: 'assets/img/services/residential/backyard_stock.jpeg',
       headText: 'Residential Services',
-      mainText: 'We can do many residential services including: <ul><li>Residential service example 1</li>' + 
-                            '<ul><li>Description 1</li></ul>' +
-                            '<li>Residential service example 2</li>' + 
-                            '<li>Residential service example 3</li>' + 
-                            '<li>Residential service example 4</li></ul>'
+      mainText: 'We can do many residential services including: <ul class="list-group list-group-flush">' +
+      '<li class="list-group-item">Residential service example 1</li>' + 
+      '<li class="list-group-item">Residential service example 2</li>' + 
+      '<li class="list-group-item">Residential service example 3</li></ul>'
     },
     {
       cardImg: 'assets/img/services/commercial/city_stock.jpeg',
       headText: 'Commercial Services',
-      mainText: 'We can do many commercial services including:' + 
-                        '<ul><li>Commercial service example 1</li>' + 
-                            '<ul><li>Description 1</li></ul>' +
-                            '<li>Commercial service example 2</li>' + 
-                            '<li>Commercial service example 3</li>' + 
-                            '<li>Commercial service example 4</li></ul>'
+      mainText: 'We can do many commercial services including: <ul class="list-group list-group-flush">' +
+      '<li class="list-group-item">Commercial service example 1</li>' + 
+      '<li class="list-group-item">Commercial service example 2</li>' + 
+      '<li class="list-group-item">Commercial service example 3</li></ul>'
     }
   ];
 }
