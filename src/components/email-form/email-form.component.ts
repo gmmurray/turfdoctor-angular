@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class EmailFormComponent implements OnInit {
   emailForm: FormGroup;
   EMAIL_SERVER = "https://mailthis.to/gsoccerm@gmail.com";
-  emailModel = new Email('', '', '', '', 'Turf Doctor Email Form', 'http://localhost:4200/confirmation', '');
+  emailModel = new Email('', '', '', '', 'Turf Doctor Email Form', 'https://gregmurray.org/turfdoctor-angular/confirmation', '');
   @Input() formStyle: string;
   ngOnInit() {
   }
