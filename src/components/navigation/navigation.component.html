@@ -4,7 +4,7 @@
         <links>
                 <ul class="navbar-nav ml-auto">
                     <li *ngFor="let option of options" class="nav-item">
-                        <a class="nav-link" routerLink="/{{option.toLowerCase()}}" routerLinkActive="light-green-text">{{option}}</a>
+                        <a class="nav-link font-weight-bolder" routerLink="/{{option.toLowerCase()}}" routerLinkActive="light-green-text">{{option}}</a>
                     </li>
                 </ul>
                 <button mdbBtn class="btn btn-light-green btn-md ml-auto" (click)="contactModal.show()">Request Quote</button>

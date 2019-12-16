@@ -1,5 +1,5 @@
-<a (click)="portfolioModal.show()">
-    <img src={{imageUrl}} style="width:350px;height:250px;object-fit:cover;max-width:100%">
+<a (click)="portfolioModal.show()" class="card shadow">
+    <img src={{imageUrl}} class="gallery-image">
 </a>
 
 <div mdbModal #portfolioModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">

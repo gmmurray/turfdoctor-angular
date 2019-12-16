@@ -20,6 +20,7 @@ import { FooterComponent } from 'src/components/footer/footer.component';
 import { ServiceCardComponent } from 'src/components/services/service-card/service-card.component';
 import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gallery-item.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ConfirmationComponent } from 'src/components/confirmation/confirmation.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EmailFormComponent,
     FooterComponent,
     ServiceCardComponent,
-    GalleryItemComponent
+    GalleryItemComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

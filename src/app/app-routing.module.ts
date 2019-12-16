@@ -5,6 +5,7 @@ import { ServicesComponent } from '../components/services/services.component';
 import { PortfolioComponent } from '../components/portfolio/portfolio.component';
 import { AboutComponent } from '../components/about/about.component';
 import { ContactComponent } from '../components/contact/contact.component';
+import { ConfirmationComponent } from 'src/components/confirmation/confirmation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'portfolio/:filter', component: PortfolioComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  { path: 'confirmation', component: ConfirmationComponent }
 ];
 
 @NgModule({

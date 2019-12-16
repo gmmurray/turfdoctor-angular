@@ -1,1 +1,33 @@
-<app-page-header [background]="background"></app-page-header>
+<app-page-header [backgroundClass]="backgroundClass"
+[backgroundStyle]="backgroundStyle" [title]="title"></app-page-header>
+
+<div class="container my-4">
+    <mdb-card>
+        <mdb-card-body>
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Let's get started on making your residential or commercial landscaping project a reality.</h1><hr class="border w-100">
+                    <div class="row">
+                        <div class="col">
+                            Address: 123 Address Road Jacksonville, FL 32224
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Phone: 904-123-4567
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Email: email@address.com
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h4 class="text-center">Send us a message</h4>
+                    <app-email-form [formStyle]="none"></app-email-form>
+                </div>
+            </div>
+        </mdb-card-body>
+    </mdb-card>
+</div>

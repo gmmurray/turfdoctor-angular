@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { GalleryItemComponent } from 'src/components/portfolio/gallery-item/gallery-item.component';
 import { ActivatedRoute } from '@angular/router';
+import { ImageService } from 'src/app/image.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -10,77 +11,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PortfolioComponent implements OnInit {
   title = 'Portfolio';
-  background = "paral-portfolio";
-
+  backgroundClass: string;
+  backgroundStyle: object;
   galleryImages : GalleryItemComponent[];
   galleryImagesFilter : GalleryItemComponent[];
   currentFilter: string = 'all';
   currentPage: number = 1;
 
-  constructor(private titleService: Title, private route: ActivatedRoute) {
+  constructor(private titleService: Title, private route: ActivatedRoute, private imageService: ImageService) {
     this.setTitle(this.title);
-    
-    //this.galleryImagesFilter = this.galleryImages;
-   }
+  }
+  
   public setTitle(pageTitle){
     this.titleService.setTitle(pageTitle);
   }
+
   ngOnInit() {
-    this.setGalleryImages();
+    this.initializeProperties();
     this.filter(this.route.snapshot.params.filter);
   }
 
-  setGalleryImages() {
-    this.galleryImages = [
-      {
-        imageUrl: 'assets/img/gallery/backyard1-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image One',
-        description: 'Description One',
-        category: 'residential'
-      },
-      {
-        imageUrl: 'assets/img/gallery/flowers-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image Two',
-        description: 'Description Two',
-        category: 'commercial'
-      },
-      {
-        imageUrl: 'assets/img/gallery/heart-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image Three',
-        description: 'Description Three',
-        category: 'residential'
-      },
-      {
-        imageUrl: 'assets/img/gallery/hills-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image Two',
-        description: 'Description Two',
-        category: 'commercial'
-      },
-      {
-        imageUrl: 'assets/img/gallery/house-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image Two',
-        description: 'Description Two',
-        category: 'residential'
-      },
-      {
-        imageUrl: 'assets/img/gallery/mountains-stock.jpeg',
-        dimensionx: '350',
-        dimensiony: '250',
-        title: 'Image Two',
-        description: 'Description Two',
-        category: 'residential'
-      },
-    ];
+  initializeProperties() {
+    this.backgroundClass = 'paral-portfolio';
+    this.backgroundStyle = {'background-image': 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(' + this.imageService.getBannerImage('portfolio') +')'};
+    this.galleryImages = this.imageService.getGalleryImages();
   }
 
   filter(type){

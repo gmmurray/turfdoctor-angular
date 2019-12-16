@@ -6,7 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./page-header.component.css'],
 })
 export class PageHeaderComponent implements OnInit {
-  @Input() background: string;
+  @Input() backgroundClass: string;
+  @Input() backgroundStyle: string;
   @Input() homeButton: boolean;
   @Input() leadText: string;
   @Input() subtitle: string;

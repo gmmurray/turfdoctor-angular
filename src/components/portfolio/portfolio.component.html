@@ -1,4 +1,6 @@
-<app-page-header [background]="background" [title]="title"></app-page-header>
+<app-page-header [backgroundClass]="backgroundClass"
+[backgroundStyle]="backgroundStyle" [title]="title"></app-page-header>
+
 <div class="container">
     <div class="row text-center mt-3">
         <div class="col">
@@ -11,8 +13,7 @@
     <div class="row text-center">
         <div class="col-md-4 my-3"
             *ngFor='let image of galleryImagesFilter | paginate: { itemsPerPage: 9, currentPage: currentPage }'>
-            <app-gallery-item [imageUrl]='image.imageUrl' [dimensionx]='image.dimensionx'
-                [dimensiony]='image.dimensiony' [title]='image.title' [description]='image.description'
+            <app-gallery-item [imageUrl]='image.imageUrl' [title]='image.title' [description]='image.description'
                 [category]='image.category'></app-gallery-item>
         </div>
     </div>

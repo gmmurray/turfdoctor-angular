@@ -8,8 +8,6 @@ import { Component, OnInit, Input } from '@angular/core';
 export class GalleryItemComponent {
 
   @Input() imageUrl: string;
-  @Input() dimensionx: string;
-  @Input() dimensiony: string;
   @Input() title: string;
   @Input() description: string;
   @Input() category: string;
